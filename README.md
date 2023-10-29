@@ -1,21 +1,20 @@
-# Noir Examples
+# Recursive proofs with Noir
 
-This is a reference repo to help you get started with writing zero-knowledge circuits and applications with [Noir](https://noir-lang.org/).
+Recursive proofs mean you prove that another proof is correct. A bit of a proofinception but bear with me:
 
-Each project is an example you can use for whatever you want. Feel free to mix them in order to find the best combination of technology that suits your needs.
+- You prove that `x != y`
+- You pick that proof and send it to another circuit (the "outer" proof)
+- You generate the outer proof and verify it
 
-- Private Voting: [`./foundry-voting`](./foundry-voting)
-- Stealthdrop: [`./stealthdrop`](./stealthdrop)
-- Recursion: [`./recursion`](./recursion/)
+Why is this useful? In this example, it doesn't do much. But you could verify two proofs within a proof, which can be incredibly useful. You could also avoid verifying stuff on-chain for turn-based games, for example.
 
-## Starter
+## Getting Started
 
-You can view simpler, boilerplate projects that are good templates for starting your own Noir project in the [Noir Starter](https://github.com/noir-lang/noir-starter) repo.
+1. [Install nargo](https://noir-lang.org/getting_started/nargo_installation#option-1-noirup) version 0.17.0 with `noirup -v 0.17.0`
+2. Install dependencies by running `yarn`
+3. Compile the project with `yarn compile`
+4. Run `yarn dev`
 
-## Support
+## Testing
 
-Need help? Join the [Noir Discord](https://discord.gg/JtqzkdeQ6G) or reach out on [Twitter](https://twitter.com/NoirLang).
-
-## Contributing
-
-We welcome contributions! Check out the [contributing guidelines](./CONTRIBUTING.md) for more info.
+To run the [test file](./test/index.ts), try `yarn test`
