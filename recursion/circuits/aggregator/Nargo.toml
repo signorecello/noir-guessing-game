@@ -1,5 +1,5 @@
 [package]
-name = "recursion"
+name = "aggregator"
 type = "bin"
 authors = [""]
 compiler_version = "0.9.0"

@@ -6,17 +6,23 @@ import { CompiledCircuit, ProofData } from "@noir-lang/types"
 
 export type Circuits = {
   main: CompiledCircuit,
-  recursive: CompiledCircuit
+  [key: string]: CompiledCircuit
 }
 
 export type BackendInstances = {
-  main: BarretenbergBackend,
-  recursive: BarretenbergBackend
+  mains: {
+    alice: BarretenbergBackend
+    bob: BarretenbergBackend
+  },
+  aggregators: {
+    alice: BarretenbergBackend
+    bob: BarretenbergBackend
+  },
 }
 
 export type Noirs = {
   main: Noir,
-  recursive: Noir
+  [key: string]: Noir
 }
 
 export interface ProofArtifacts extends ProofData {
